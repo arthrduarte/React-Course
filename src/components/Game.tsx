@@ -3,7 +3,7 @@ interface Props {
     onSelectOption: (option: string) => void
 }
 
-export default function Option({ option, onSelectOption }: Props) {
+export default function Game({ option, onSelectOption }: Props) {
     return (
         <>
             <div className="p-5 border rounded">
