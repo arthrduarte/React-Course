@@ -15,12 +15,12 @@ export default function Game({ setMachineScore, setUserScore }: Props) {
     const [open, setOpen] = useState<boolean>(false)
 
     const machineChoice = () => {
-        return options[Math.floor(Math.random() * 2)]
+        return options[Math.floor(Math.random() * 3)]
     }
 
     const handleSelectItem = (userOption: string) => {
         if (!allowedPlay) {
-            handlePlayAgain()
+            handlePlayAgain(false)
             return
         }
         let machineOption = machineChoice()
@@ -56,7 +56,11 @@ export default function Game({ setMachineScore, setUserScore }: Props) {
             setWinner("Select your move and the machine will select automaticaly")
         }
     }
-    const handlePlayAgain = () => {
+    const handlePlayAgain = (restart: boolean) => {
+        if (restart) {
+            setUserScore(0)
+            setMachineScore(0)
+        }
         setSelectedOption(null)
         setWinner("Make your move")
         setAllowedPlay(true)
@@ -80,9 +84,13 @@ export default function Game({ setMachineScore, setUserScore }: Props) {
                 <div className='flex flex-col text-center items-center lg:w-1/5'>
                     <p className="font-bold text-[2rem] my-5">{winner}</p>
                     <button
-                        onClick={() => handlePlayAgain()}
+                        onClick={() => handlePlayAgain(false)}
                         className="w-1/2 text-white font-bold rounded-lg px-3 py-2 mb-5 transition ease-in bg-[#E84855] hover:bg-[#ff7480]"
                     >Play Again</button>
+                    <button
+                        onClick={() => handlePlayAgain(true)}
+                        className="w-1/2 text-white font-bold rounded-lg px-3 py-2 mb-5 transition ease-in bg-[#E84855] hover:bg-[#ff7480]"
+                    >New Game</button>
                     <button
                         onClick={() => setOpen(true)}
                         className="w-1/2 text-white font-bold rounded-lg px-3 py-2 mb-5 transition ease-in bg-[#0E6BA8] hover:bg-[#72b9e8]">Rules</button>
