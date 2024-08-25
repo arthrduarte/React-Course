@@ -1,50 +1,46 @@
-# React + TypeScript + Vite
+# Rock, Paper, Scissors
+Rock, Paper, Scissors is a simple web-based game where users can play the classic game against a computer opponent.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Table of Contents
+- [Introduction](#introduction)
+- [Technologies Used](#technologies-used)
+- [Running the Application](#running-the-application)
 
-Currently, two official plugins are available:
+## Introduction
+The Rock, Paper, Scissors game allows users to play the traditional game against a computer. The computer randomly selects one of the three options, and the user can choose their option to see who wins. The game keeps track of the score and provides a fun and interactive way to play this classic game.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Technologies Used
+- **React**: For building the user interface.
+- **Tailwind CSS**: For styling the application.
+- **TypeScript**: For type safety and improved developer experience.
+- **Vite**: For fast and optimized development build.
 
-## Expanding the ESLint configuration
+## Running the Application
+To set up the project locally, follow these steps:
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+1. **Clone the Repository**:
+````
+git clone https://github.com/arthrduarte/rock-paper-scissors
+````
 
-- Configure the top-level `parserOptions` property like this:
+2. **Navigate to the project directory**:
+````
+cd rock-paper-scissors
+````
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+3. **Install dependencies**:
+````
+npm install
+````
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+4. **Run the application**:
+`````
+npm run dev
+````
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+Now you should be able to access and interact with the application on your local machine.
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+
+---
+
+**Made by [Arthur Duarte](https://github.com/arthrduarte)**
