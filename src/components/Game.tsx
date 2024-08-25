@@ -77,7 +77,7 @@ export default function Game({ setMachineScore, setUserScore }: Props) {
                         <p className=" text-[3rem]">{options[2]}</p>
                     </div>
                 </div>
-                <div className='flex flex-col items-center lg:w-1/5'>
+                <div className='flex flex-col text-center items-center lg:w-1/5'>
                     <p className="font-bold text-[2rem] my-5">{winner}</p>
                     <button
                         onClick={() => handlePlayAgain()}
